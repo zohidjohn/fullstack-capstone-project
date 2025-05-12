@@ -5,13 +5,13 @@ import {urlConfig} from '../../config';
 import { useAppContext } from '../../context/AuthContext';
 
 const Profile = () => {
-  const [userDetails, setUserDetails] = useState({});
- const [updatedDetails, setUpdatedDetails] = useState({});
- const {setUserName} = useAppContext();
- const [changed, setChanged] = useState("");
+const [userDetails, setUserDetails] = useState({});
+const [updatedDetails, setUpdatedDetails] = useState({});
+const {setUserName} = useAppContext();
+const [changed, setChanged] = useState("");
 
- const [editMode, setEditMode] = useState(false);
-  const navigate = useNavigate();
+const [editMode, setEditMode] = useState(false);
+const navigate = useNavigate();
   useEffect(() => {
     const authtoken = sessionStorage.getItem("auth-token");
     if (!authtoken) {
@@ -21,7 +21,8 @@ const Profile = () => {
     }
   }, [navigate]);
 
-  const fetchUserProfile = async () => {
+
+const fetchUserProfile = async () => {
     try {
       const authtoken = sessionStorage.getItem("auth-token");
       const email = sessionStorage.getItem("email");
@@ -65,15 +66,19 @@ const handleSubmit = async (e) => {
 
     const payload = { ...updatedDetails };
     const response = await fetch(`${urlConfig.backendUrl}/api/auth/update`, {
-      //Step 1: Task 1
-      //Step 1: Task 2
-      //Step 1: Task 3
+      method: "PUT",//Step 1: Task 1
+      headers: {//Step 1: Task 2
+        "Authorization": `Bearer ${authtoken}`,
+        "Content-Type": "application/json",
+        "Email": email,
+      },
+      body: JSON.stringify(payload),//Step 1: Task 3
     });
 
     if (response.ok) {
       // Update the user details in session storage
-      //Step 1: Task 4
-      //Step 1: Task 5
+      setUserName(updatedDetails.name);//Step 1: Task 4
+      sessionStorage.setItem("name", updatedDetails.name);//Step 1: Task 5
       setUserDetails(updatedDetails);
       setEditMode(false);
       // Display success message to the user
@@ -103,7 +108,7 @@ return (
     type="email"
     name="email"
     value={userDetails.email}
-    disabled // Disable the email field
+    disabled 
   />
 </label>
 <label>

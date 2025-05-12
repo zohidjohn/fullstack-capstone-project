@@ -4,7 +4,9 @@ const fs = require('fs');
 
 // MongoDB connection URL with authentication options
 let url = `${process.env.MONGO_URL}`;
+// data source in json
 let filename = `${__dirname}/gifts.json`;
+// will be inserted
 const dbName = 'giftdb';
 const collectionName = 'gifts';
 

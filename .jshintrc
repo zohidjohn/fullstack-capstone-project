@@ -1,0 +1,7 @@
+{
+  "esversion": 8,
+  "globals": {
+    "console": true,
+    "require": true
+  }
+}

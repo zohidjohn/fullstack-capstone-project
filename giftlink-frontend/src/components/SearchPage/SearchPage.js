@@ -1,3 +1,10 @@
+//Task 1: Define state variables for the search query, age range, and search results.
+// Task 2. Fetch search results from the API based on user inputs.
+// Task 6. Enable navigation to the details page of a selected gift.
+/* Task 7: Add text input field for search criteria*/
+/* Task 8: Implement search button with onClick event to trigger search:*/
+/*Task 5: Display search results and handle empty results with a message. */
+
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';

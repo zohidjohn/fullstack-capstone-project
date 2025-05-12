@@ -45,7 +45,7 @@
 
 /* Style for comments section */
 .comments-section {
-    /* Task 6: Style the comments section for readability */
+       /* Task 6: Style the comments section for readability */
     margin-top: 20px; /* Add top margin for spacing */
     /* Additional styles as needed */
 }
@@ -56,17 +56,14 @@
     margin-bottom: 15px; /* Add bottom margin for spacing between cards */
     /* Additional styles for individual comment card */
 }
-
-
 /* Style for comment author */
 .comments-section .comment-author {
     font-weight: bold; /* Make the comment author's name bold */
     /* Additional styles for comment author */
 }
-
-
 /* Style for comment text */
 .comments-section .comment-text {
     /* Additional styles for comment text */
     color: #555;
 }
+
